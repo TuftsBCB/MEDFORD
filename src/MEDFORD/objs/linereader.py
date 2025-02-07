@@ -46,7 +46,8 @@ class LineReader :
     # Novel token
     @staticmethod
     def is_comment_line(line:str) -> bool :
-        """Returns True if the provided string is a comment line."""
+        """Returns True if the provided string is a comment line. Ignores leading spaces."""
+        line = line.strip()
         return re.match(f"{DetailStatics.comment_header}", line) is not None
 
     @staticmethod
@@ -179,8 +180,6 @@ class LineReader :
         Currently only returns None in the case of an At-At line (which are currently being ignored entirely) or if the line is empty."""
         if line.strip() == "" :
             return None
-        
-        line = line.strip()
 
         if LineReader.is_comment_line(line) :
             return CommentLine(lineno, line)
