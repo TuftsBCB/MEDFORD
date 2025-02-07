@@ -224,5 +224,10 @@ def parse_args_and_go() :
     mfd = MFD(PurePath(args.file))
     mfd.run_medford()
 
+def provide_args_and_go(action:ParserMode, file:str, mode:OutputMode, debug:bool = False) :
+    mfdglobals.debug = debug
+    mfd = MFD(PurePath(file))
+    mfd.run_medford()
+
 if __name__ == "__main__" :
     parse_args_and_go()

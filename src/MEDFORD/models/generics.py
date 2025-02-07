@@ -71,7 +71,7 @@ class RoleOpts(Flag) :
 # Attributes                                #
 #############################################
 
-class MEDFORDmdl(BlockModel) :
+class MEDFORDMDL(BlockModel) :
     """Model to store MEDFORD metadata describing the MEDFORD file itself,
      such as MEDFORD file colloqiual name and the version of MEDFORD used
      to write this file."""
@@ -96,18 +96,18 @@ class MEDFORDmdl(BlockModel) :
         return values
     
 
-class Journal(BlockModel):
+class JournalMDL(BlockModel):
     name: MinorT[str]
     #TODO: Validation? Do we care about proper format for this?
     Volume: OptMinorT[str]
     Issue: OptMinorT[str]
     Pages: OptMinorT[str]
 
-class Date(BlockModel):
+class DateMDL(BlockModel):
     name: Union[MinorT[datetime.date], MinorT[datetime.datetime]]
     Note: OptMinorT[str]
     
-class Contributor(BlockModel) :
+class ContributorMDL(BlockModel) :
     name: MinorT[str]
     ORCID: OptMinorT[str] = None
     Association: OptMinorT[str] = None
@@ -152,11 +152,11 @@ class Contributor(BlockModel) :
 
         return cur_flags
 
-class Funding(BlockModel):
+class FundingMDL(BlockModel):
     ID: OptMinorT[str]
     # TODO: research possible funding IDs so we can implement validation
 
-class Keyword(BlockModel):
+class KeywordMDL(BlockModel):
     pass
 
 
@@ -166,5 +166,5 @@ class Keyword(BlockModel):
 #############################################
 
 class Entity(BaseModel) :
-    MEDFORD: MajorsT[MEDFORDmdl]
-    Contributor: OptMajorT[Contributor]
+    MEDFORD: MajorsT[MEDFORDMDL]
+    Contributor: OptMajorT[ContributorMDL] = None
