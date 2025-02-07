@@ -419,7 +419,8 @@ class TestLineCollection() :
         blocks:List[Block] = lc.get_flat_blocks()
         assert len(blocks) == 1
         assert blocks[0].head_detail.get_content(resolved_macros) == "2321value"
-    
+
+    @pytest.mark.skip(reason="AtAt has been redone since these tests were made. They must be adjusted once new At-At has been implemented.")
     def test_multilayer_macro_replace_2(self) :
         test_lines: List[str] = [
             "`@Macro1 value",
@@ -457,7 +458,7 @@ class TestLineCollection() :
             "`@Macro2 hello",
             " `@Macro hello",
             " hello",
-            "@Major `@Macro2"
+            "@Major `@Macro2",
         ]
         test_Lines : List[Optional[Line]] = []
         for idx, l in enumerate(test_lines) :
@@ -480,6 +481,9 @@ class TestLineCollection() :
         assert len(blocks) == 1
         assert blocks[0].head_detail.get_content(resolved_macros) == "hello value value 2 hello hello"
 
+    def test_throw_error_on_macro_redefine() :
+        raise NotImplementedError()
+    
     #########################################
     # Free-for-all. Yipee!                  #
     #########################################

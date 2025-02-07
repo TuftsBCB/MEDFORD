@@ -5,7 +5,7 @@ from MEDFORD.objs.linecollector import LineCollector as LC
 from MEDFORD.objs.linereader import LineReader as LR
 from MEDFORD.objs.dictionizer import Dictionizer as D
 
-from MEDFORD.models.generics import Contributor, Entity
+from MEDFORD.models.generics import ContributorMDL, Entity
 
 class TestPydanticModels() :
     def setup_method(self, test_method) :

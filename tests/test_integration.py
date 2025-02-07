@@ -1,3 +1,4 @@
+import pytest
 from MEDFORD.medford import provide_args_and_go, ParserMode, OutputMode
 
 # example error case:
@@ -21,6 +22,7 @@ def test_no_contributor(tmp_path) :
     provide_args_and_go(ParserMode.VALIDATE, tmpfile, OutputMode.OTHER)
     return
 
+@pytest.mark.skip(reason="This is no longer desired functionality. Update to throw an error.")
 def test_lead_spacing_ignored(tmp_path) :
     example_content = "\
         @MEDFORD asdf\n\
