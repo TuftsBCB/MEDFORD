@@ -16,22 +16,22 @@ repos:
       - id: toml-sort-fix
         name: toml-sort-fix
         files: pyproject\.toml
-  # - repo: local
-  #   hooks:
-  #     - id: ruff
-  #       name: ruff
-  #       entry: ruff
-  #       args: ["check", "--fix", "--exit-non-zero-on-fix", "--show-fixes"]
-  #       types: [python]
-  #       language: system
-  #       pass_filenames: false
-  #     - id: ruff-format
-  #       name: ruff-format
-  #       entry: ruff
-  #       args: ["format"]
-  #       language: system
-  #       types: [python]
-  #       pass_filenames: false
+  - repo: local
+    hooks:
+      - id: ruff
+        name: ruff
+        entry: ruff
+        args: ["check", "--fix", "--exit-non-zero-on-fix", "--show-fixes"]
+        types: [python]
+        language: system
+        pass_filenames: false
+      - id: ruff-format
+        name: ruff-format
+        entry: ruff
+        args: ["format"]
+        language: system
+        types: [python]
+        pass_filenames: false
   # - id: mypy
   #   name: mypy
   #   entry: mypy

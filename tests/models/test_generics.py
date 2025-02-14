@@ -1,9 +1,8 @@
 from medford import MFD
 from MEDFORD.models.generics import Entity
-import pytest 
 
 
-def test_Keyword_model() :
+def test_Keyword_model():
     test_str = "@Keyword key"
 
     res = MFD._get_unvalidated_blocks(test_str)
