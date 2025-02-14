@@ -1,3 +1,15 @@
-[build-system]
-requires = ["setuptools>=42"]
-build-backend = "setuptools.build_meta"
+[project]
+name = "medford"
+version = "2.0.1"
+authors = [{ name = "Polina Shpilker", email = "polina.shpliker@tufts.edu" }]
+description = "The MEDFORD Command Line tool for validating & compiling medford research metadata files."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["pydantic==2.4.2"]
+
+[tool.uv]
+dev-dependencies = ["ruff", "mypy", "pre-commit"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
