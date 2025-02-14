@@ -125,4 +125,3 @@ class MedfordValidator(object):
             exit(1)
             # todo: make a proper error
         return MedfordValidator.instance()
-

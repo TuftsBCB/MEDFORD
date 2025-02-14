@@ -166,8 +166,3 @@ class TestMaxMacroDepthErr(ProcessToMacros) :
         assert err.errtype == "MaxMacroDepthExceeded"
         assert err.macros[0].name == "Macro11"
         assert err.macros[0].get_raw_content() == "`@Macro10"
-
-
-
-
-
