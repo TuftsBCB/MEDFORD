@@ -32,6 +32,11 @@ repos:
         language: system
         types: [python]
         pass_filenames: false
+      - id: pytest
+        name: pytest
+        entry: pytest
+        language: system
+        pass_filenames: false
   # - id: mypy
   #   name: mypy
   #   entry: mypy
@@ -43,10 +48,5 @@ repos:
   #   name: basedpyright
   #   entry: basedpyright
   #   args: ["--pythonpath", ".venv/bin/python", "--level", "error"]
-  #   language: system
-  #   pass_filenames: false
-  # - id: pytest
-  #   name: pytest
-  #   entry: pytest
   #   language: system
   #   pass_filenames: false
